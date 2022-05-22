@@ -24,7 +24,6 @@ Here are the technologies used in this project.
 * http error 1.6.3
 * json web token 3.2.0
 * redis 4.1.0
-* cookie-parser 1.4.4
 * passport 0.5.2
 
 ## Getting started
