@@ -8,24 +8,24 @@ Hello, i'm Jean. Its is a project in node js. Based in a simple game with a rank
 Here are the technologies used in this project.
  
 * Node version 12.22.9
-* MariaDB version 10.6.7
+* MYSQL 8.0.29
  
  
 ## Services Used
  
 * Github
  
- 
 ## Node Js - Server
-* mongoose 6.3.2
+* sequelize 6.19.2
+* bcrypt 5.0.1
+* mysql2 2.3.3
 * express 4.16.1
 * http error 1.6.3
 * json web token 3.2.0
-* morgan 1.9.1
+* redis 4.1.0
 * cookie-parser 1.4.4
-* ejs 2.6.1
 * passport 0.5.2
- 
+
 ## Getting started
  
 * To iniciate server:
@@ -36,14 +36,12 @@ Here are the technologies used in this project.
  
 ## How to use
  
-* Use a firefox
+* I often think use at a whatsapp account and use a chat oublic
  
  
 ## Features
  
-  - Here will be the features.
- 
-
+  - 0.2 - Database simple with insert. 
  
  
 ## Versioning
