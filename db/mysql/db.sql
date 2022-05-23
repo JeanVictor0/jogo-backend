@@ -9,7 +9,6 @@ CREATE TABLE users (
     password text,
     idRank integer,
     useRoom integer,
-    data date,
     PRIMARY KEY(id) 
 );
 
@@ -18,7 +17,6 @@ CREATE TABLE ranks (
     points int,
     game int NOT NULL,
     wins int,
-    data date,
     PRIMARY KEY (id) 
 );
 

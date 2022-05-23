@@ -1,24 +1,34 @@
 const db = require('../config/sequelize')
+const sequelize = require('sequelize')
 
-const users = database.define('produto', {
+const users = db.define('users', {
     id: {
-        type: db.INTEGER,
+        type: sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
-    nome: {
-        type: db.STRING,
+    name: {
+        type: sequelize.STRING,
         allowNull: false
     },
     email: {
         allowNull: false,
-        type: db.STRING
+        type: sequelize.STRING
     },  
     password: {
-        allowNull: false,
-        type: db.STRING
-    }
+        type: sequelize.STRING
+    },
+    idRank: {
+        type: sequelize.INTEGER,
+        references: 'ranks',
+        referencesKey: 'id'
+    },
+    useRoom: {
+        type: sequelize.INTEGER,
+        references: 'rooms',
+        referencesKey: 'id'
+    },
 })
 
 module.exports = users

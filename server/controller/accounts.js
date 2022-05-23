@@ -1,4 +1,4 @@
-const db = require('../config/sequelize')
+const db = require('../schema/users')
 const bcrypt = require('bcrypt')
 
 const controller = {
@@ -12,6 +12,12 @@ const controller = {
 
     },
     register(req,res){
+        var {email,password,name} = req.body
+        bcrypt.hash(password, 8, (err, hash) => {
+            db.create({email,password:hash,name})
+            .then((result) => {res.status(200); console.log(result)})
+        })
+        
 
     },
     delete(req,res){
