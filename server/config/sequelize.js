@@ -1,13 +1,12 @@
-const { Sequelize, INTEGER } = require('sequelize');
+const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('users', 'root', '200604jr@senha', {
+const sequelize = new Sequelize('multiGames', 'root', '200604jr@senha', {
   host: 'localhost',
-  dialect: mysql
+  dialect: 'mysql'
 });
 
 try {
-    await sequelize.authenticate()
-    console.log('Banco de dados acessado')
+    sequelize.authenticate()
 } catch (error) {
     console.log(error)
 }

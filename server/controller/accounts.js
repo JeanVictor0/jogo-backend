@@ -1,4 +1,4 @@
-const db = require('../schemas/users')
+const db = require('../config/sequelize')
 const bcrypt = require('bcrypt')
 
 const controller = {
