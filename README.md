@@ -9,8 +9,8 @@ Here are the technologies used in this project.
  
 * Node version 12.22.9
 * MYSQL 8.0.29
-* Redis
- 
+* Redis 5.0.7 
+
  
 ## Services Used
  
