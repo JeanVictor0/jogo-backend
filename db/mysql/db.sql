@@ -9,7 +9,7 @@ CREATE TABLE users (
     password text,
     idRank integer,
     useRoom integer,
-    PRIMARY KEY(id) 
+    PRIMARY KEY(id)
 );
 
 CREATE TABLE ranks (
@@ -42,3 +42,5 @@ ALTER TABLE users add FOREIGN KEY(useRoom) REFERENCES rooms(id);
 ALTER TABLE rooms add FOREIGN KEY(game) REFERENCES games(id);
 
 alter table ranks add FOREIGN KEY (game) REFERENCES rooms(id)
+
+alter table users add UNIQUE KEY(name,email);
