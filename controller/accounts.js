@@ -1,6 +1,8 @@
 const db = require('../schema/users')
 const bcrypt = require('bcrypt')
+const cache = require('../config/redis')
 const { literal } = require("sequelize");
+var crypto = require('crypto');
 
 const controller = {
     async login(req,res){
@@ -8,7 +10,9 @@ const controller = {
         var {dataValues} = await db.findOne({where: {email}})
         bcrypt.compare(password,dataValues.password, (err,resultado) => {
             if (resultado) {
-                return res.status(200).send("Senha certa")
+                var hash = crypto.createHash('md5').update(email+password+Date.now()).digest('hex');
+                cache.set(hash,dataValues.id, 360000)
+                return res.status(200).cookie('userCookie',hash, {maxAge: 360000}).send("Ok")
             } else {
                 return res.status(400).send("Senha errada")
             }
